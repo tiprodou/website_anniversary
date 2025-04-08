@@ -4,33 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For Amaya</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        .section { display: none; }
-        .active { display: block; }
-        button { margin: 10px; padding: 10px; cursor: pointer; }
-    </style>
-    <style>
-        img { 
-            width: 300px; /* Change to desired width */
-            height: auto; 
-        }
-    </style>
-    <style>
-        .hover-pic {
-            width: 300px; /* or however you sized it */
-            height: auto;
-            border-radius: 12px;
-            transition: transform 0.2s ease, box-shadow 0.3s ease;
-        }
-        
-        .hover-pic:hover {
-            transform: scale(1.25); /* Grows slightly */
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8); /* Soft shadow */
-            filter: brightness(1.1) contrast(1.1); /* Makes it glow a little */
-        }
-        
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+
 </head>
 <body>
     <h1>Welcome my love</h1>
@@ -41,7 +18,6 @@
         <button onclick="showSection('pics')">Pics</button>
         <button onclick="showSection('days')">Days Together</button>
         <button onclick="showSection('gifts')">Gifts</button>
-        <button onclick="showSection('songs')">Songs</button>
     </div>
     
     <div id="pics" class="section">
@@ -57,58 +33,43 @@
         <button onclick="showSection('home')">Back to Home</button>
     </div>
 
-    <div id="songs" class="section">
-        <div class="music-player">
-
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5rbKRtReZvMuDT35rnEBQM?utm_source=generator&theme=0" width="60%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            
-            <button onclick="showSection('home')">Back to Home</button>
-        </div>
-
     </div>
 
     <div id="days" class="section">
         <h2>Days Together</h2>
-        <p>You've been together for <span id="daysCount"></span> days!</p>        
+        <p>It's been <span id="days-only"></span></p>  
+        <div id="days-only"></div>
+        <div id="love-timer">
+            And we actually have been together for: <span id="time-together"></span>
+        </div>
+
         <button onclick="showSection('home')">Back to Home</button>
     </div>
 
     <div id="gifts" class="section" style="display: none;">
         <h2>🎁 Gifts</h2>
-        <p>Here is a special gift just for you!</p>
+        <p>Here are our collection of gifts</p>
         <button onclick="window.open('https://heyzine.com/flip-book/9eca76180a.html#page/1.com', '_openbook')">Open Gift</button>
     
         <br><br>
         <button onclick="showSection('home')">Back to Home</button>
     </div>
-    
-    <script>
-        function showSection(sectionId) {
-            document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
-            document.getElementById(sectionId).classList.add('active');
-        }
-        
-        function calculateDaysTogether() {
-            let startDate = new Date('2024-07-27'); // Change this to your actual anniversary date
-            let today = new Date();
-            let difference = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
-            document.getElementById('daysCount').innerText = difference;
-        }
-        
-        calculateDaysTogether();
 
-        function showSection(sectionId) {
-            // Hide all sections
-            let sections = document.querySelectorAll('.section');
-            sections.forEach(section => section.style.display = 'none');
-        
-            // Show the selected section
-            document.getElementById(sectionId).style.display = 'block';
-        }
+    <div id="music-player"" class="music-player-container">
+        <h3 class="now-playing">🎵 Now Playing</h3>
+        <div class="music-player-frame">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5rbKRtReZvMuDT35rnEBQM?utm_source=generator&theme=0" 
+            width="50%" 
+            height="150" 
+            frameBorder="0" 
+            allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+            </iframe>
+        </div>
+    </div>
 
-        
-    </script>
-
+<script src="script.js"></script>
 
 </body>
 </html>

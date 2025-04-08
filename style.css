@@ -1,0 +1,107 @@
+body { font-family: Arial, sans-serif; text-align: center; }
+.section { display: none; }
+.active { display: block; }
+button { margin: 10px; padding: 10px; cursor: pointer; }
+
+img { 
+    width: 300px; /* Change to desired width */
+    height: auto; 
+}
+
+section {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+
+.hover-pic {
+    width: 300px; /* or however you sized it */
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.hover-pic:hover {
+    transform: scale(1.25); /* Grows slightly */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8); /* Soft shadow */
+    filter: brightness(1.1) contrast(1.1); /* Makes it glow a little */
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #fff0f5;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+}
+
+button {
+    padding: 12px 24px;
+    margin: 10px;
+    font-size: 18px;
+    background: linear-gradient(135deg, #d63333, #d383dd);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 182, 193, 0.4);
+    transition: all 0.3s ease;
+}
+  
+button:hover {
+    background: linear-gradient(135deg, #d383dd, #d63333);
+    transform: scale(1.05);
+}
+
+#days-only {
+    font-size: 32px;
+    font-weight: bold;
+    color: #d63333;
+    margin: 20px 0;
+}
+
+#time-together {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d63333;
+    margin: 20px 0;
+}
+  
+  .hidden {
+    display: none;
+    opacity: 0;
+}
+
+.music-player-container {
+    position: fixed;
+    bottom: 15px;
+    left: 20px;
+    right: 20px;
+    padding: 10px 14px;
+    background: #d63333;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(255, 192, 203, 0.4);
+    z-index: 100;
+    max-width: 400px;
+    margin: auto;
+}
+  
+.music-player-frame {
+    overflow: hidden;
+    border-radius: 12px;
+    height: 80px; /* matches the iframe height */
+}
+  
+.music-player-frame iframe {
+    display: block;
+    width: 100%;
+    height: 80px;
+}
+  
+.now-playing {
+    margin: 0 0 6px 0;
+    font-size: 14px;
+    color: #1f0210;
+    font-weight: 600;
+    text-align: center;
+}
+  
