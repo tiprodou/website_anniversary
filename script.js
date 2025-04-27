@@ -57,6 +57,48 @@ function updateLoveTimer() {
 // Update every second
 setInterval(updateLoveTimer, 1000);
 updateLoveTimer(); // Call once on load
-  
 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const checkboxes = document.querySelectorAll(".todo-list input[type='checkbox']");
   
+    checkboxes.forEach((checkbox) => {
+      // Load saved state from localStorage
+      const savedState = localStorage.getItem(checkbox.id);
+      if (savedState) {
+        checkbox.checked = JSON.parse(savedState);
+      }
+  
+      // Save state when changed
+      checkbox.addEventListener("change", () => {
+        localStorage.setItem(checkbox.id, checkbox.checked);
+      });
+    });
+});
+
+const specialMessage = document.getElementById("special-anniversary");
+
+function checkAnniversary() {
+  const today = new Date();
+  const day = today.getDate();
+
+  if (day === 27) {
+    specialMessage.innerHTML = "🎉 HAPPY ANNIVERSARY! 🎉";
+    specialMessage.style.display = "block"; // make sure it shows
+
+    confetti({
+      particleCount: 200,
+      spread: 100,
+      origin: { y: 0.6 }
+    });
+    
+  } else {
+    specialMessage.style.display = "none"; // hide it on other days
+  }
+}
+
+// Check immediately
+checkAnniversary();
+
+// Optional: keep checking every few hours just in case
+setInterval(checkAnniversary, 3600000); // check every hour

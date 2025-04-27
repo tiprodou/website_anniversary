@@ -14,7 +14,7 @@ section {
   }
 
 .hero-heading {
-    background: linear-gradient(135deg, #f87a7a, #f792ee); /* soft pink background */
+    background: linear-gradient(135deg, #fa5c5c, #f792ee); /* soft pink background */
     padding: 25px 35px;
     border-radius: 20px;
     color: #ad2929e7;
@@ -55,7 +55,7 @@ section {
 
 body {
     font-family: 'Quicksand', sans-serif;
-    background-color: #fff0f5;
+    background: linear-gradient(135deg,#fff0f5, #f384ea);
     text-align: center;
     padding: 20px;
     margin: 0;
@@ -76,9 +76,25 @@ button {
   
 button:hover {
     background: linear-gradient(135deg, #d383dd, #d63333);
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
+.back-home {
+    background: linear-gradient(135deg, #55184a, #c25091);
+    color: #ffffff;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+.back-home:hover {
+    background: linear-gradient(135deg, #c25091, #55184a);  /* darker pink on hover */
+}
+  
 #days-only {
     font-size: 32px;
     font-weight: bold;
@@ -93,18 +109,24 @@ button:hover {
     margin: 20px 0;
 }
   
-  .hidden {
+.hidden {
     display: none;
     opacity: 0;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(180deg, #f5e1f2, #ec84d6);
+}
+  
 .music-player-container {
     position: fixed;
     bottom: 15px;
     left: 20px;
     right: 20px;
     padding: 10px 14px;
-    background: #d63333;
+    background: linear-gradient(180deg, #e92a2a, #3b0e0e);
     border-radius: 20px;
     box-shadow: 0 0 15px rgba(19, 13, 14, 0.4);
     z-index: 100;
@@ -132,3 +154,47 @@ button:hover {
     text-align: center;
 }
   
+.todo-list {
+    list-style: none;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    margin-top: 1rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 500;
+  }
+  
+.todo-list li {
+    background: linear-gradient(135deg, #d63333, #d383dd);
+    padding: 12px 16px;
+    margin: 10px 0;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(255, 192, 203, 0.3);
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: 0.2s ease;
+}
+  
+.todo-list li:hover {
+    transform: scale(1.1);
+}
+
+.todo-list label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    cursor: pointer
+}
+
+.todo-list input[type="checkbox"]:checked + .check-text {
+    text-decoration: line-through;
+    color: #1b1a1a;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
